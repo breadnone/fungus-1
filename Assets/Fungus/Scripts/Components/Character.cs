@@ -48,8 +48,7 @@ namespace Fungus
         protected PortraitState portaitState = new PortraitState();
 
         protected static List<Character> activeCharacters = new List<Character>();
-
-        public virtual void ClickCharacter()
+        public void ClickCharacter()
         {
             if (clickableCharacter && flowchart != null && executeBlock != string.Empty)
             {
@@ -59,7 +58,6 @@ namespace Fungus
                 }
             }
         }
-
         protected virtual void OnEnable()
         {
             if (!activeCharacters.Contains(this))
@@ -73,13 +71,8 @@ namespace Fungus
         {
             activeCharacters.Remove(this);
         }
-        
+
         #region Public members
-        
-        /// <summary>
-        /// Gets the state of clickable character.
-        /// </summary>
-        public virtual bool ClickableCharacter { get { return clickableCharacter; } set { clickableCharacter = value; } }
 
         /// <summary>
         /// Gets the list of active characters.
